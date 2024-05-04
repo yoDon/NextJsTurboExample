@@ -13,12 +13,12 @@
 var builder = DistributedApplication.CreateBuilder(args);
 
 var express = builder.AddGenericNodeApp("express", "../TurboRepo", "pnpm", "start-express")
-    .WithHttpEndpoint(targetPort: 3000, env: "PORT")
+    .WithHttpEndpoint(env: "PORT")
     .WithExternalHttpEndpoints()
     .MyPublishAsDockerFile("apps/express/Dockerfile");
 
 var nextjs = builder.AddGenericNodeApp("nextjs", "../TurboRepo", "pnpm", "start-nextjs")
-    .WithHttpEndpoint(targetPort: 3000, env: "PORT")
+    .WithHttpEndpoint(env: "PORT")
     .WithExternalHttpEndpoints()
     .MyPublishAsDockerFile("apps/nextjs/Dockerfile");
 

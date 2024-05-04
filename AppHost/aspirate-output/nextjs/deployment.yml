@@ -23,7 +23,7 @@ spec:
         image: nextjs:latest
         imagePullPolicy: IfNotPresent
         ports:
-        - containerPort: 3000
+        - containerPort: 8001
         envFrom:
         - configMapRef:
             name: nextjs-env

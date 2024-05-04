@@ -9,7 +9,7 @@ configMapGenerator:
 - name: express-env
   literals:
     - NODE_ENV=development
-    - PORT=3000
+    - PORT=8000
     - OTEL_EXPORTER_OTLP_ENDPOINT=http://aspire-dashboard:4317
 
 

@@ -23,7 +23,7 @@ spec:
         image: express:latest
         imagePullPolicy: IfNotPresent
         ports:
-        - containerPort: 3000
+        - containerPort: 8000
         envFrom:
         - configMapRef:
             name: express-env

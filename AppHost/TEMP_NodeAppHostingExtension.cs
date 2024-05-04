@@ -28,7 +28,9 @@ public static class TEMP_NodeAppHostingExtension
             ? ["run", scriptName, "--", .. args]
             : ["run", scriptName];
 
+        workingDirectory = PathNormalizer.NormalizePathForCurrentPlatform(Path.Combine(builder.AppHostDirectory, workingDirectory));
         var resource = new NodeAppResource(name, packageManager, workingDirectory);
+        
         return builder.AddResource(resource)
             .WithNodeDefaults()
             .WithArgs(allArgs);
