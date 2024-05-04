@@ -1,0 +1,30 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: express
+  labels:
+    app: express
+spec:
+  minReadySeconds: 60
+  replicas: 1
+  selector:
+    matchLabels:
+      app: express
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: express
+    spec:
+      containers:
+      - name: express
+        image: express:latest
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 3000
+        envFrom:
+        - configMapRef:
+            name: express-env
+      terminationGracePeriodSeconds: 180

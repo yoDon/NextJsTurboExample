@@ -1,0 +1,8 @@
+resources:
+- express
+- nextjs
+- dashboard.yml
+
+generatorOptions:
+  disableNameSuffixHash: true
+

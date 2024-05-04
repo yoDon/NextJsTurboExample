@@ -1,0 +1,15 @@
+resources:
+- deployment.yml
+- service.yml
+
+generatorOptions:
+  disableNameSuffixHash: true
+
+configMapGenerator:
+- name: nextjs-env
+  literals:
+    - NODE_ENV=development
+    - PORT=3000
+    - OTEL_EXPORTER_OTLP_ENDPOINT=http://aspire-dashboard:4317
+
+

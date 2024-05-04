@@ -1,0 +1,40 @@
+{
+  "resources": {
+    "express": {
+      "type": "dockerfile.v0",
+      "path": "../TurboRepo/apps/express/Dockerfile",
+      "context": "../TurboRepo",
+      "env": {
+        "NODE_ENV": "development",
+        "PORT": "{express.bindings.http.targetPort}"
+      },
+      "bindings": {
+        "http": {
+          "scheme": "http",
+          "protocol": "tcp",
+          "transport": "http",
+          "targetPort": 3000,
+          "external": true
+        }
+      }
+    },
+    "nextjs": {
+      "type": "dockerfile.v0",
+      "path": "../TurboRepo/apps/nextjs/Dockerfile",
+      "context": "../TurboRepo",
+      "env": {
+        "NODE_ENV": "development",
+        "PORT": "{nextjs.bindings.http.targetPort}"
+      },
+      "bindings": {
+        "http": {
+          "scheme": "http",
+          "protocol": "tcp",
+          "transport": "http",
+          "targetPort": 3000,
+          "external": true
+        }
+      }
+    }
+  }
+}
