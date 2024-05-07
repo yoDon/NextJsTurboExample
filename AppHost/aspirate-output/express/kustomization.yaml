@@ -1,6 +1,6 @@
 resources:
-- deployment.yml
-- service.yml
+- deployment.yaml
+- service.yaml
 
 generatorOptions:
   disableNameSuffixHash: true
@@ -10,6 +10,6 @@ configMapGenerator:
   literals:
     - NODE_ENV=development
     - PORT=8000
-    - OTEL_EXPORTER_OTLP_ENDPOINT=http://aspire-dashboard:4317
-
+    - OTEL_EXPORTER_OTLP_ENDPOINT=http://aspire-dashboard:18889
+    - OTEL_SERVICE_NAME=express
 
